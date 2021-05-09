@@ -18,10 +18,10 @@ E:\Anaconda\Library\usr\bin
     pip list    # 查看通过pip方式安装的包
     
     # 创建虚拟环境
-    conda  create -n python38  python=3.8 包名2 包名3 ...
+    conda  create -n py38  python=3.8 openpyxl selenium ...
     
     # 激活指定环境（conda4之前的版本是：source activate envName）
-    conda activate envName
+    conda activate py38
     
     # 退出当前环境
     conda deactivate
